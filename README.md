@@ -1,6 +1,5 @@
-# Pushdown OO (Version extracted from APAC second delievery)
-
-This is just analytic engine without `play` framework. 
+# Pushdown OO Taint analysis.
+Ucombinator maintained fork. Original from Shuying at https://github.com/shuyingliang/pushdownoo.
 
 ## Requirements
 
