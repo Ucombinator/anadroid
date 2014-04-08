@@ -163,7 +163,7 @@ object RiskAnalysis {
       writer.write(buffer.toString)
       writer.close()
 
-      println("Clas Risk Ranking report dumped to: " + path)
+      println("Class Risk Ranking report dumped to: " + path)
       path
      
   }
@@ -233,7 +233,7 @@ object RiskAnalysis {
       writer.write(buffer.toString)
       writer.close()
 
-      println("Clas Risk Ranking report dumped to: " + path)
+      println("Method Risk Ranking report dumped to: " + path)
       path
      
   }
