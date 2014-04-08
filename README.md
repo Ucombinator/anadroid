@@ -3,8 +3,8 @@ Ucombinator maintained fork. Original from Shuying at https://github.com/shuying
 
 ## Requirements
 
-### Scala 2.9.1 
-The reason didn't move to 2.10: 
+### Scala 2.9.1
+The reason didn't move to 2.10:
 * StackOverflow error in Scala 2.10
 * Code changes such as case class must have parameters
 * Scala 2.9.1 works perfectly with Play 2.0.4
@@ -12,10 +12,12 @@ The reason didn't move to 2.10:
 ### JVM
 Compiled successfully with the following JDKs:
 * OpenJDK Runtime Environment (IcedTea6 1.11.5) (6b24-1.11.5-0ubuntu1~12.04.1).
-* Oracle JDK 6 and 7. If you're on Mac, use the Oracle JDK. Compiling openJDK on Mac is complicated and prone to failure. 
+* Oracle JDK 6 and 7. If you're on Mac, use the Oracle JDK. Compiling openJDK on Mac is complicated and prone to failure.
 
-### Graphviz 
+### Graphviz
 For converting to svg dyck state graph. (It will get choked on large dot files)
+
+Ensure the graphviz is installed at `/usr/local/bin/dot`.
 
 ## Compile
 ```
@@ -25,7 +27,7 @@ make compile
 
 ## Run
 Still in `pdafordalvik` folder:
-	
+
 ```
 java -jar artifacts/PushdownOO_Exflow.jar org.ucombinator.dalvik.cfa.cesk.RunAnalysis \
     [--k <number>] [--gc] [--lra] [--aco] [--godel] [--dump-graph] \
@@ -33,7 +35,7 @@ java -jar artifacts/PushdownOO_Exflow.jar org.ucombinator.dalvik.cfa.cesk.RunAna
     [--interrupt-after-time <number of minutes>] \
     path/to/your/filename.apk
 ```
-	
+
 e.g.
 ```
 java -jar artifacts/PushdownOO_Exflow.jar org.ucombinator.dalvik.cfa.cesk.RunAnalysis \
