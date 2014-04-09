@@ -7,6 +7,8 @@ import scala.tools.nsc.io.Directory
 import java.io.File
 import java.io.FileWriter
 import org.ucombinator.dalvik.syntax.Stmt
+import spray.json._
+import DefaultJsonProtocol._
 
 object RiskAnalysis {
    def Desc[T : Ordering] = implicitly[Ordering[T]].reverse
