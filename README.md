@@ -50,9 +50,10 @@ java -jar artifacts/PushdownOO_Exflow.jar org.ucombinator.dalvik.cfa.cesk.RunAna
     ./test/Twitter_3.7.1.apk
 ```
 
-**Note: Recently, I added the flow-sensitive paths in text (apposed to in graph before) with intent operations/data involves. However, the output is produced after the depth first search on the analyzed graphs, which can take a long time!**
+*Note*: The feature of producing flow-sensitive paths in text report (apposed to in graph before) with intent operations/data involves, is not yet fully tested. At least, the output is produced after the depth first search on the analyzed graphs, which can take a long time!
 
-**In case of large apps, please use JVM options (before -jar) to increase run time heap/stack like this (or larger):**
+In case of large apps, please use JVM options (before -jar) to increase run time heap/stack like this (or larger):
+
 ```
 -XX:MaxPermSize=512m -Xms512m  -Xmx1024M -Xss1024m
 ```
