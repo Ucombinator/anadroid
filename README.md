@@ -1,4 +1,4 @@
-# Pushdown OO Taint analysis.
+# Pushdown OO Taint-Flow analysis.
 Ucombinator maintained fork. Original from Shuying at https://github.com/shuyingliang/pushdownoo.
 
 ## Requirements
