@@ -370,7 +370,7 @@
             <zipfileset includes="**/*.class" src="lib/scala-compiler.jar"/>
 	    <zipfileset includes="**/*.class" src="lib/commons-lang3-3.1.jar"/>
 	    <zipfileset includes="**/*.class" src="lib/spray-json_2.9.2-1.2.3.jar"/>
-            <manifest>
+	    <manifest>
                 <attribute name="Main-Class" value="org.ucombinator.dalvik.cfa.cesk.RunAnalysis"/>
             </manifest>
         </jar>
