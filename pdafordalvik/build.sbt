@@ -16,15 +16,17 @@ mainClass in (Compile, run) := Some("org.ucombinator.dalvik.cfa.cesk.RunAnalysis
 
 mainClass in (oneJar) := Some("org.ucombinator.dalvik.cfa.cesk.RunAnalysis")
 
-
 // fork a new JVM for 'run' and 'test:run'
 fork := true
 
-// fork a new JVM for 'test:run', but not 'run'
-fork in Test := true
-
 // add a JVM option to use when forking a JVM for 'run'
-javaOptions += "-J -Xss1024M"
+javaOptions += "-XX:MaxPermSize=512m"
+
+javaOptions += "-Xms1024m"
+
+javaOptions += "-Xmx2048m"
+
+javaOptions += "-Xss1536m"
 
 // only use a single thread for building
 parallelExecution := false
