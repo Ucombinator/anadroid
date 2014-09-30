@@ -8,25 +8,13 @@ import scala.util.matching.Regex
 trait ParserHelper {
 
     private def simplefunc(pf: tools.nsc.io.File, cnt: Int, opts:AIOptions) {
-
-    val fp = pf.path // path.getAbsolutePath();
-    val sexp = SExp.parseAllIn(fp)
-
-    if (opts.verbose) {
-      // System.err.println("Input program in S-expression Form:")
-      //  System.out.println(sexp)
-   //   System.out.println("\n")
-    } 
-
-    S2DParser(sexp);
-
-   // if (opts.verbose) {
-    //  System.err.println("done parsing file: " + fp)
-  //  }
-
+      val fp = pf.path // path.getAbsolutePath();
+      val sexp = SExp.parseAllIn(fp)
+      S2DParser(sexp);
   }  
     
    def parseDalvikSExprs(opts: AIOptions) {
+    println("parseDalvikSExprs()");
     val dirName = opts.sexprDir
 
     val sexDir = new Directory(new File(dirName))
@@ -40,15 +28,14 @@ trait ParserHelper {
     sexpFiles.foreach((sf) => {
       cnt += 1
       
-    if (opts.verbose) {
-      System.err.println(cnt + " Parsing file " + sf)
-    }
+      if (opts.verbose) {
+        System.out.println(cnt + " Parsing file " + sf)
+      }
       simplefunc(sf, cnt, opts)
     })
 
     if (opts.verbose) {
-      System.err.println(" Done passing all the s-exp class files! ")
-      System.out.println("\n")
+      System.out.println(" Done parsing all the s-exp class files!")
     }
   }
 }

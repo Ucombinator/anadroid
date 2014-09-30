@@ -22,8 +22,8 @@ STANDARD_DEX_FN = "classes.dex"
 SEXP_OUT = "dedexout"
 pd_dict = {}
 
-SCRT_GET_PERMS = "./GetManifestInfo.py"
-SCRT_GET_Hands = "./gethandlers.py"
+SCRT_GET_PERMS = "./scripts/GetManifestInfo.py"
+SCRT_GET_Hands = "./scripts/gethandlers.py"
 
 PY_PATH = "/usr/bin/python"
 RKT_PATH = "/Applications/Racket/bin/racket"

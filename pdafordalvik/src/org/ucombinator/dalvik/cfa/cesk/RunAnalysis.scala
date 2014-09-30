@@ -88,7 +88,7 @@ object RunAnalysis {
     """)
 
   def main(args: Array[String]) { 
-    
+     println("RunAnalysis.main(" + args.mkString(" ")+ ")");
     
     
       val at = new AnalysisHelperThread(args.drop(1))//fs,loc,pic,personal,ntw)

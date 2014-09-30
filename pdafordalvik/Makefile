@@ -1,9 +1,12 @@
+SBT_OPTS=-XX:MaxPermSize=512m -Xms512m -Xmx1024M -Xss1024m
+
 compile:
-	export SBT_OPTS="-XX:MaxPermSize=512m -Xms512m -Xmx1024M -Xss1024m"
 	sbt compile
 
-jar:
+jar: compile
 	sbt one-jar
+	mv target/scala-2.9.1/anadroid_2.9.1-1.0-one-jar.jar ./
+	mv anadroid_2.9.1-1.0-one-jar.jar anadroid.jar
 
 run-batik:
 	java -XX:MaxPermSize=512m -Xms1024m  -Xmx2048m -Xss1536m -jar artifacts/PushdownOO_Exflow.jar org.ucombinator.dalvik.cfa.cesk.RunAnalysis  --k 1 --gc --lra --aco --godel --obranches 60 ./test/BatikAndroid2.apk
@@ -30,3 +33,7 @@ run-luindex-godel:
 run-lusearch-godel:
 	java -XX:MaxPermSize=512m -Xms1024m  -Xmx2048m -Xss1536m -jar artifacts/PushdownOO_Exflow.jar org.ucombinator.dalvik.cfa.cesk.RunAnalysis  --k 1 --gc --lra --aco --godel --obranches 60  ./test/AndroidLusearch.apk
 
+clean:
+	sbt clean
+	rm -rf target/
+	rm -f anadroid.jar

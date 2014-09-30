@@ -123,6 +123,7 @@ object AIOptions {
     }
   
    def parse(args: List[String], opts: AIOptions) {
+    println(args.toString);
     args match {
       case List() => {}
       case "--k" :: k :: rest => {

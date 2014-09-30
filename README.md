@@ -61,3 +61,34 @@ In case of large apps, please use JVM options (before -jar) to increase run time
 ### For DaCapo benchmark evaluation
 * The benchmark apks locates in benchmark-dacapo-apks
 * During analysis, `--obranches [number]` for branch optimization to termiate fast safely.
+
+
+###TODO:
+
+-Modify state graph output to be s-expressions 
+
+-Remove dex2sex from repo (it should be a separate project maintained by Ucombinator)
+
+-Fix invoke bug related to dex2sex (ask Hao)
+
+-Remove portions of play framework that are not needed
+
+-Flatten folder structure, create a bin directory for output jar file and data files
+
+-Follow sbt folder structure: http://www.scala-sbt.org/0.13/tutorial/Directories.html
+
+-Add test framework: http://www.scalatest.org
+
+-Consider adding data files as resources:
+
+```
+import scala.io.Source
+
+// The string argument given to getResource is a path relative to
+// the resources directory.
+val source = Source.fromURL(getClass.getResource("/data.xml"))
+```
+
+
+
+

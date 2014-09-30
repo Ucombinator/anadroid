@@ -90,7 +90,7 @@ class AnalysisHelperThread(params: Array[String]) extends Thread with WideningHe
   }
 
   override def run() {
-
+    println("AnalysisHelperThread.run(" + params.mkString(" ") + ")");
     PlayHelper.doAnalysis(params)
 
     //runner.runPDCFA(opts,  initEns) 

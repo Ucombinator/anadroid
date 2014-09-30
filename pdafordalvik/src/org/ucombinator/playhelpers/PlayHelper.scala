@@ -113,7 +113,7 @@ object PlayHelper extends ParserHelper with DalvikVMRelated {//with NonNullCheck
     */
 
   def doAnalysis(args: Array[String])   {
-
+    println("PlayHelper.doAnalysis(" + args.mkString(" ") + ")")
     val opts0 = AIOptions.parse(args)
      
     //IRExtractHelper.parseThread.join()
@@ -130,7 +130,7 @@ object PlayHelper extends ParserHelper with DalvikVMRelated {//with NonNullCheck
 
     if (opts.sexprDir == null) {
       println()
-      System.err.println("Please, specify a the app directory to process")
+      System.err.println("Please, specify the app directory to process")
       println()
       println(helpMessage)
     }
@@ -143,6 +143,7 @@ object PlayHelper extends ParserHelper with DalvikVMRelated {//with NonNullCheck
     
     println("Parsing the disassembled bytecode")
      //parse in s-expressioned dalvik 
+    println("START_PARSE")
     parseDalvikSExprs(opts) 
     
     println("Parsing done.\n")

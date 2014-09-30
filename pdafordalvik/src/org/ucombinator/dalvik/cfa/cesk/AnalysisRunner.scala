@@ -367,6 +367,7 @@ abstract class AnalysisRunner(opts: AIOptions) extends FancyOutput
 
   }
    def parseDalvikSExprs(opts: AIOptions) {
+    System.out.println("AnalysisRunner.parseDalvikSExprs()")
     val dirName = opts.sexprDir
 
     val sexDir = new Directory(new File(dirName))
