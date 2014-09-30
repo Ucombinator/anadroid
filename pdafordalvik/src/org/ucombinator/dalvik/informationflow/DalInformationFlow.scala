@@ -126,7 +126,7 @@ object DalInformationFlow {
 	
 	
     def parInRankingMap : scala.collection.mutable.Map[String, Int]  = {
-	    val riskRankingPath = "android-knowledge" + File.separator + "risk-rank-tmp.txt"
+	    val riskRankingPath = "data" + File.separator + "risk-rank-tmp.txt"
 	     val classLines =  File(riskRankingPath).lines.toList.filter(_.trim() !=  "" )
      val deduplicateClsLines = classLines.toSet.toList
      
@@ -139,7 +139,7 @@ object DalInformationFlow {
 	}
 	
 	 private def parseInRawPermMap : scala.collection.mutable.Map[String, PermissionPair] = {
-     val permMapFilePath  =  "android-knowledge" + File.separator + "permission-map.txt" 
+     val permMapFilePath  =  "data" + File.separator + "permission-map.txt" 
      
      val classLines =  File(permMapFilePath).lines.toList.filter(_.trim() !=  "" )
      val deduplicateClsLines = classLines.toSet.toList
@@ -272,9 +272,9 @@ object DalInformationFlow {
   }
 
   def parseInAndroidKnowledge {
-    val srcPath = "android-knowledge" + File.separator + "sources.txt"
-    val sinkPath = "android-knowledge" + File.separator + "sinks.txt"
-    val sstringPath = "android-knowledge" + File.separator + "str-pat.txt"
+    val srcPath = "data" + File.separator + "sources.txt"
+    val sinkPath = "data" + File.separator + "sinks.txt"
+    val sstringPath = "data" + File.separator + "str-pat.txt"
 
   
 

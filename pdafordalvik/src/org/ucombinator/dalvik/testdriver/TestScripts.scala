@@ -83,7 +83,7 @@ object TestScripts {
       
       val pathToScript  = lst.dropRight(1).foldLeft("")((res, s) => {res + s + "/"})
       
-     val getIRCmdStr = "/usr/bin/python ./getIR.py" + " " + pathToScript
+     val getIRCmdStr = "/usr/bin/python ./scripts/getIR.py" + " " + pathToScript
       val res = runSysCmd(getIRCmdStr) 
       var projFolder = "";
       var  irfolder="";

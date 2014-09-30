@@ -34,7 +34,7 @@ object AnalysisScope {
   
 
   def parseInExclusiveLibNames {//List[Regex] = {
-    val strFilePath = "dat" + File.separator + "libExclusions.txt"
+    val strFilePath = "data" + File.separator + "libExclusions.txt"
 
     val classLines = File(strFilePath).lines.toList.filter(_.trim() != "")
     val deduplicateClsLines = classLines.toSet.toList

@@ -99,8 +99,8 @@ trait DalvikVMRelated {
    */
 
   private def parseInAndroidKnowledge(opts: AIOptions): (List[String], List[String], List[String]) = {
-    val classPath = "android-knowledge" + File.separator + "classes.txt"
-    val entryMethPath = "android-knowledge" + File.separator + "callbacks.txt"
+    val classPath = "data" + File.separator + "classes.txt"
+    val entryMethPath = "data" + File.separator + "callbacks.txt"
     val xmlMethNames = opts.apkProjDir + File.separator + "handlers.txt"
 
     val classLines = File(classPath).lines.toList.filter(_ != "")

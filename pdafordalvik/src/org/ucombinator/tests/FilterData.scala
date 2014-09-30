@@ -11,7 +11,7 @@ object FilterData {
   
   private def parseInAndroidKnowledge//(opts: AIOptions) 
   :   List[String]= {
-     val classPath  =  "android-knowledge" + File.separator + "rows-3.csv"
+     val classPath  =  "data" + File.separator + "rows-3.csv"
     
      
     
@@ -32,7 +32,7 @@ object FilterData {
   }
   
   private def getSink {
-      val classPath  =  "android-knowledge" + File.separator + "source2.txt" 
+      val classPath  =  "data" + File.separator + "source2.txt" 
     
      val classLines =  File(classPath).lines.toList.filter(_ != "")
      val deduplicateClsLines = classLines.toSet.toList

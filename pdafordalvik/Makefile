@@ -1,6 +1,9 @@
 compile:
-	ant compile
-	ant jar
+	export SBT_OPTS="-XX:MaxPermSize=512m -Xms512m -Xmx1024M -Xss1024m"
+	sbt compile
+
+jar:
+	sbt one-jar
 
 run-batik:
 	java -XX:MaxPermSize=512m -Xms1024m  -Xmx2048m -Xss1536m -jar artifacts/PushdownOO_Exflow.jar org.ucombinator.dalvik.cfa.cesk.RunAnalysis  --k 1 --gc --lra --aco --godel --obranches 60 ./test/BatikAndroid2.apk

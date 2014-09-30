@@ -109,9 +109,9 @@ object AIOptions {
       val pathToScript = pathToScript0.replace(" ", "-")
       println("pathToScript", pathToScript)
      val getIRCmdStr = if(doNotNull) {
-         "/usr/bin/python ./getIR.py" + " " + "--donull" + " " + pathToScript + " " + fileName
+         "/usr/bin/python ./scripts/getIR.py" + " " + "--donull" + " " + pathToScript + " " + fileName
        } else{
-         "/usr/bin/python ./getIR.py" + " " + "--nonull" +  " " +  pathToScript + " " + fileName
+         "/usr/bin/python ./scripts/getIR.py" + " " + "--nonull" +  " " +  pathToScript + " " + fileName
        }
       
       getIRCmdStr !

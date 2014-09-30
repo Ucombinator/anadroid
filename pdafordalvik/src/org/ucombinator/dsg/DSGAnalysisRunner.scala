@@ -509,11 +509,11 @@ trait DSGAnalysisRunner extends DalvikVMRelated{
     writer.close()
     
     // first tar dot file
-        val graphZipCmdDot=   "/usr/bin/python ./pytar.py" + " " + opts.graphDirName + " graph.tar"
+        val graphZipCmdDot=   "/usr/bin/python ./scripts/pytar.py" + " " + opts.graphDirName + " graph.tar"
        
     graphZipCmdDot !
     
-    // val allTarCmdDot= "/usr/bin/python ./pytar.py" + " " + opts.apkProjDir + " all.tar.gz"
+    // val allTarCmdDot= "/usr/bin/python ./scripts/pytar.py" + " " + opts.apkProjDir + " all.tar.gz"
     //  graphZipCmdDot !
     
     // time to generate the svg file
@@ -523,11 +523,11 @@ trait DSGAnalysisRunner extends DalvikVMRelated{
     
     // zip the graph folder
    // val graphZipCmd = "cd " + opts.graphDirName + " && " + "tar -zcvf graph.tar.gz ./* "
-      val graphZipCmd =   "/usr/bin/python ./pytar.py" + " " + opts.graphDirName + " graph.tar"
+      val graphZipCmd =   "/usr/bin/python ./scripts/pytar.py" + " " + opts.graphDirName + " graph.tar"
        
     graphZipCmd !
     
-    val allTarCmd = "/usr/bin/python ./pytar.py" + " " + opts.apkProjDir + " all.tar"
+    val allTarCmd = "/usr/bin/python ./scripts/pytar.py" + " " + opts.apkProjDir + " all.tar"
      
       allTarCmd !
     

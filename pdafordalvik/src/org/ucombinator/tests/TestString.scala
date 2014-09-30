@@ -23,7 +23,7 @@ object TestString {
   
    def main(args: Array[String]): Unit = {
        
-       val strFilePath  =  "android-knowledge" + File.separator + "str-pat.txt" 
+       val strFilePath  =  "data" + File.separator + "str-pat.txt" 
      
      val classLines =  File(strFilePath).lines.toList.filter(_.trim() !=  "" )
      val deduplicateClsLines = classLines.toSet.toList

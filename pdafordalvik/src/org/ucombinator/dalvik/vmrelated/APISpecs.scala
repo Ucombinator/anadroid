@@ -79,7 +79,7 @@ object APISpecs extends SimpleJVMClassReportParser{
   val apiSpecTable: Map[String, APIDesc] = Map.empty
   
   def readInReport{
-    val lines = File("JVMClassReport/cr.txt").lines()
+    val lines = File("data/jvm_class_report.txt").lines()
   
     lines.foreach(parseLine)
     setTempApi

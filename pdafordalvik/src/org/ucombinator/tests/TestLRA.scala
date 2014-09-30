@@ -56,7 +56,7 @@ object TestLRA extends LiveRegisterAnalysis{
      //val pycmd =   "/usr/bin/python ./pytar.py" + " " + "./public/apks/jpgnetnoloop-2065195456/jpgnetnoloop/graphs"
      // pycmd !
       
-       val pycmd2 =   "/usr/bin/python ./pytar.py" + " " + "./public/apks/jpgnetnoloop1425510450/jpgnetnoloop" + " all.tar.gz"
+       val pycmd2 =   "/usr/bin/python ./scripts/pytar.py" + " " + "./public/apks/jpgnetnoloop1425510450/jpgnetnoloop" + " all.tar.gz"
       pycmd2 !
       
       println("finished")

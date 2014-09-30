@@ -8,7 +8,7 @@ import org.ucombinator.dalvik.informationflow.DalInformationFlow
 object TestPermMap {
 
   /* private def parseInRawPermMap : Map[String, PermissionPair] = {
-     val permMapFilePath  =  "android-knowledge" + File.separator + "permission-map.txt" 
+     val permMapFilePath  =  "data" + File.separator + "permission-map.txt" 
      
      val classLines =  File(permMapFilePath).lines.toList.filter(_.trim() !=  "" )
      val deduplicateClsLines = classLines.toSet.toList
@@ -34,7 +34,7 @@ object TestPermMap {
   }*/
    
     private def parseInRawPermMap2 : scala.collection.mutable.Map[String, PermissionPair] = {
-     val permMapFilePath  =  "android-knowledge" + File.separator + "permission-map.txt" 
+     val permMapFilePath  =  "data" + File.separator + "permission-map.txt" 
      
      val classLines =  File(permMapFilePath).lines.toList.filter(_.trim() !=  "" )
      val deduplicateClsLines = classLines.toSet.toList

@@ -27,10 +27,10 @@ object IRExtractHelper {
       
      val getIRCmdStr = 
        if(doNotNull) {
-         "/usr/bin/python ./getIR.py" + " " + "--donull" + " " + pathToScript
+         "/usr/bin/python ./scripts/getIR.py" + " " + "--donull" + " " + pathToScript
        } else{
-         "/usr/bin/python ./getIR.py" + " " + "--nonull" +  " " + pathToScript
-       }//"/usr/bin/python ./getIR.py" + " " +  pathToScript
+         "/usr/bin/python ./scripts/getIR.py" + " " + "--nonull" +  " " + pathToScript
+       }//"/usr/bin/python ./scripts/getIR.py" + " " +  pathToScript
      val et: ExtractIRHelperThread = new ExtractIRHelperThread(getIRCmdStr)
       IRExtractHelper.parseThread = et
       et.start() 

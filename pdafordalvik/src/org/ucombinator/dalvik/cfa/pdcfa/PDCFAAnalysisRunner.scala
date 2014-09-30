@@ -997,7 +997,7 @@ class PDCFAAnalysisRunner(opts: AIOptions) extends DalvikCFARunner(opts)
       dumpSecurityReport(opts, dsgs)
     }
 
-  //  val reportTar = "/usr/bin/python ./pyreporttar.py" + " " + opts.permReportsDirName + " reports.tar"
+  //  val reportTar = "/usr/bin/python ./scripts/pyreporttar.py" + " " + opts.permReportsDirName + " reports.tar"
    // reportTar !
 
     if (opts.dumpGraph) {
