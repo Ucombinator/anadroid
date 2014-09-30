@@ -19,49 +19,53 @@ For converting to svg dyck state graph. (It will get choked on large dot files)
 
 Ensure the graphviz is installed at `/usr/local/bin/dot`.
 
-## Compile
+## Compile:
+
+Compilation is done automatically when you run (see below), but you can compile class files directly:
+
 ```
 cd pdafordalvik
 make compile
+```
+
+or build a jar file:
+
+```
+make jar
 ```
 
 ## Run
 Still in `pdafordalvik` folder:
 
 ```
-java -jar artifacts/PushdownOO_Exflow.jar org.ucombinator.dalvik.cfa.cesk.RunAnalysis \
-    [--k <number>] [--gc] [--lra] [--aco] [--godel] [--dump-graph] \
+make run ARGS="[--k <number>] [--gc] [--lra] [--aco] [--godel] [--dump-graph] \
     [--interrupt-after <number-of-states>] \
     [--interrupt-after-time <number of minutes>] \
-    path/to/your/filename.apk
+    path/to/your/filename.apk"
 ```
 
 e.g.
 ```
-java -jar artifacts/PushdownOO_Exflow.jar org.ucombinator.dalvik.cfa.cesk.RunAnalysis \
-    --k 1 --gc --lra --aco --godel --dump-graph ./test/Bookworm.apk
+make run ARGS="--k 1 --gc --lra --aco --godel --dump-graph path/to/Bookworm.apk"
 ```
 
 ### For Intent Fuzzer
 
 ```
-java -jar artifacts/PushdownOO_Exflow.jar org.ucombinator.dalvik.cfa.cesk.RunAnalysis \
-    --k 1 --gc --lra --aco --godel --for-intent-fuzzer --intraprocedural \
-    ./test/Twitter_3.7.1.apk
+make run ARGS="--k 1 --gc --lra --aco --godel --for-intent-fuzzer --intraprocedural \
+    ./test/Twitter_3.7.1.apk"
 ```
 
 *Note*: The feature of producing flow-sensitive paths in text report (apposed to in graph before) with intent operations/data involves, is not yet fully tested. At least, the output is produced after the depth first search on the analyzed graphs, which can take a long time!
 
-In case of large apps, please use JVM options (before -jar) to increase run time heap/stack like this (or larger):
+###BUILD CHANGES:
 
-```
--XX:MaxPermSize=512m -Xms512m  -Xmx1024M -Xss1024m
-```
+The build is now done with sbt.  SBT_OPTS is set in make targets to increase compile time heap/stack space.
+If you run sbt compile or sbt one-jar directly without the makefile, be sure to export SBT_OPTS as done in the makefile.
 
 ### For DaCapo benchmark evaluation
 * The benchmark apks locates in benchmark-dacapo-apks
 * During analysis, `--obranches [number]` for branch optimization to termiate fast safely.
-
 
 ###TODO:
 
@@ -73,11 +77,13 @@ In case of large apps, please use JVM options (before -jar) to increase run time
 
 -Remove portions of play framework that are not needed
 
--Flatten folder structure, create a bin directory for output jar file and data files
+-Flatten folder structure
 
 -Follow sbt folder structure: http://www.scala-sbt.org/0.13/tutorial/Directories.html
 
 -Add test framework: http://www.scalatest.org
+
+-Minimize python script usage, or decouple scala program from script pipeline
 
 -Consider adding data files as resources:
 
