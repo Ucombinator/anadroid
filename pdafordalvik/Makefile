@@ -1,4 +1,4 @@
-EXPORT_SBT_OPTS= export SBT_OPTS="-Xmx1024M -Xss1G"
+EXPORT_SBT_OPTS= export SBT_OPTS="-Xmx1024M -Xss1G -XX:MaxPermSize=128M"
 
 compile:
 	$(EXPORT_SBT_OPTS); sbt compile
