@@ -55,6 +55,13 @@ e.g.
 make run ARGS="--k 1 --gc --lra --aco --godel --dump-graph path/to/Bookworm.apk"
 ```
 
+#### Warning:
+The analyzer expects to receive APKs from a file structure of <folder>/<folder>/<filename>.apk (with exactly two preceding folders). It will write the reports to the same directory as the APK file passed in.
+
+Do not pass in an absolute path.
+
+Failure to follow these instructions may result in an error of "Permission denied" from line 280 of AnalysisRunner.scala.
+
 ### For Intent Fuzzer
 
 ```
